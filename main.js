@@ -1,6 +1,8 @@
+noseX = 0;
+noseY = 0;
 function preload()
 {
-
+    splot = loadImage("https://i.postimg.cc/FKYwq3JW/splot.png");
 }
 function setup()
 {
@@ -15,6 +17,7 @@ function setup()
 function draw()
 {
     image(video, 0, 0, 300, 300);
+    image(splot, noseX, noseY, 30, 30);
 }
 function takeSnapshot()
 {
@@ -29,7 +32,9 @@ function gotPoses(results)
     if(results.length > 0)
     {
         console.log(results);
-        console.log("pose x = " + results[0].pose.nose.x);
-        console.log("pose y = " + results[0].pose.nose.y);
+        noseX = results[0].pose.nose.x;
+        noseY = results[0].pose.nose.y;
+        console.log("pose x = " + noseX);
+        console.log("pose y = " + noseY);
     }
 }
