@@ -17,7 +17,7 @@ function setup()
 function draw()
 {
     image(video, 0, 0, 300, 300);
-    image(splot, noseX, noseY, 30, 30);
+    image(splot, noseX-15, noseY-7, 30, 30);
 }
 function takeSnapshot()
 {
